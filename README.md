@@ -56,7 +56,7 @@ const initialState = {
   }
 }
 
-export const reducer = typeToReducer({
+const reducer = typeToReducer({
   [ USER_FETCH ]: typedReducer('user')
 }, initialState)
 ```
@@ -79,7 +79,7 @@ const initialState = {
   }
 }
 
-export const reducer = typeToReducer({
+const reducer = typeToReducer({
   [ USER_FETCH ]: {
     PENDING: (state, action) => pendingAction(state, action, 'user'),
     REJECTED: (state, action) => pendingAction(state, action, 'user'),
@@ -98,5 +98,36 @@ export const reducer = typeToReducer({
       }
     }
   }
+}, initialState)
+```
+
+## Custom shape
+
+If your initial state object shape is different than the raccomanded by *redux-promise-middleware*, we exposed a function to call to customize your object shape.
+
+```js
+import typeToReducer from 'type-to-reducer'
+import typedReducer, { setCustomShape } from 'type-to-reducer-addons'
+
+ const initialeState = {
+    user: {
+      payload: null,
+      isFetching: false,
+      isFetched: false,
+      errors: null,
+    },
+  };
+
+  const customShape = {
+      data: "payload",
+      fetching: "isFetching",
+      fetched: "isFetched",
+      error: "errors",
+  };
+
+setCustomShape(customShape);
+  
+const reducer = typeToReducer({
+  [ USER_FETCH ]: typedReducer('user')
 }, initialState)
 ```
