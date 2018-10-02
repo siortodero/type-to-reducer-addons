@@ -61,3 +61,41 @@ export const reducer = typeToReducer({
 }, initialState)
 ```
 
+## Splitting
+
+When you have to customize one of *pending*, *rejected* or *fulfilled* function, you can split **typedReducer**:
+
+```js
+import typeToReducer from 'type-to-reducer'
+import { pendingAction, rejectedAction, fulfilledAction } from 'type-to-reducer-addons'
+
+const initialState = {
+  user: {
+    data: null,
+    fetching: false,
+    fetched: false,
+    error: false,
+  },
+}
+
+export const reducer = typeToReducer({
+  [ USER_FETCH ]: {
+    PENDING: (state, action) => pendingAction(state, action, 'user),
+    REJECTED: (state, action) => pendingAction(state, action, 'user),
+    FULFILLED: (state, action) => {
+      const { age, name, surname } = action.payload
+      
+      return {
+        ...initialState,
+        fetching: false,
+        fetched: true,
+        data: {
+          name,
+          surname,
+          age,
+        },
+      }
+    }
+  }
+}, initialState)
+```
