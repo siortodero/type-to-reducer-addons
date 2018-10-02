@@ -17,26 +17,26 @@ const initialState = {
     data: null,
     fetching: false,
     fetched: false,
-    error: false,
-  },
+    error: false
+  }
 }
 
 export const reducer = typeToReducer({
   [ USER_FETCH ]: {
     PENDING: () => ({
       ...initialState,
-      fetching: true,
+      fetching: true
     }),
     REJECTED: (state, action) => ({
       ...initialState,
       fetching: false,
-      error: action.payload,
+      error: action.payload
     }),
     FULFILLED: (state, action) => ({
       ...initialState,
       fetching: false,
       fetched: true,
-      data: action.payload,
+      data: action.payload
     })
   }
 }, initialState)
@@ -52,8 +52,8 @@ const initialState = {
     data: null,
     fetching: false,
     fetched: false,
-    error: false,
-  },
+    error: false
+  }
 }
 
 export const reducer = typeToReducer({
@@ -75,14 +75,14 @@ const initialState = {
     data: null,
     fetching: false,
     fetched: false,
-    error: false,
-  },
+    error: false
+  }
 }
 
 export const reducer = typeToReducer({
   [ USER_FETCH ]: {
-    PENDING: (state, action) => pendingAction(state, action, 'user),
-    REJECTED: (state, action) => pendingAction(state, action, 'user),
+    PENDING: (state, action) => pendingAction(state, action, 'user'),
+    REJECTED: (state, action) => pendingAction(state, action, 'user'),
     FULFILLED: (state, action) => {
       const { age, name, surname } = action.payload
       
@@ -93,8 +93,8 @@ export const reducer = typeToReducer({
         data: {
           name,
           surname,
-          age,
-        },
+          age
+        }
       }
     }
   }
