@@ -60,6 +60,7 @@ export const reducer = typeToReducer({
   [ USER_FETCH ]: typedReducer('user')
 }, initialState)
 ```
+So you have only to specify the name of the property target of the function (in this case *user*).
 
 ## Splitting
 
