@@ -1,8 +1,9 @@
-import typedReducer, { pendingAction, rejectedAction, fulfilledAction } from './src/typedReducer';
+import typedReducer, { pendingAction, rejectedAction, fulfilledAction, setCustomShape } from './src/typedReducer';
 
 export default typedReducer;
 export {
   pendingAction,
   rejectedAction,
   fulfilledAction,
+  setCustomShape,
 };

@@ -1,6 +1,6 @@
 {
   "name": "type-to-reducer-addons",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create reducer functions based on a recursive pattern object keyed by action types",
   "main": "src/index.js",
   "keywords": [
