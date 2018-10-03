@@ -1,13 +1,13 @@
 import update from 'immutability-helper';
 
-let defaultShape = {
-  data: "data",
-  fetching: "fetching",
-  fetched: "fetched",
-  error: "error"
+const defaultShape = {
+  data: 'data',
+  fetching: 'fetching',
+  fetched: 'fetched',
+  error: 'error',
 };
 
-export const setCustomShape = shape => {
+export const setCustomShape = (shape) => {
   if (shape.data) {
     defaultShape.data = shape.data;
   }

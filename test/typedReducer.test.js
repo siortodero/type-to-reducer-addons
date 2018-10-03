@@ -1,5 +1,10 @@
 import typeToReducer from 'type-to-reducer';
-import typedReducer, { pendingAction, rejectedAction, fulfilledAction, setCustomShape } from '../src/typedReducer';
+import typedReducer, {
+  pendingAction,
+  rejectedAction,
+  fulfilledAction,
+  setCustomShape,
+} from '../src/typedReducer';
 
 describe('typedReducer', () => {
   let reducer = null;
@@ -181,12 +186,11 @@ describe('typedReducer custom shape', () => {
   };
 
   beforeEach(() => {
-
     const customShape = {
-      data: "payload",
-      fetching: "isFetching",
-      fetched: "isFetched",
-      error: "errors",
+      data: 'payload',
+      fetching: 'isFetching',
+      fetched: 'isFetched',
+      error: 'errors',
     };
 
     setCustomShape(customShape);
