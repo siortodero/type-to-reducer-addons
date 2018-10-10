@@ -82,7 +82,7 @@ const initialState = {
 const reducer = typeToReducer({
   [ USER_FETCH ]: {
     PENDING: (state, action) => pendingAction(state, action, 'user'),
-    REJECTED: (state, action) => pendingAction(state, action, 'user'),
+    REJECTED: (state, action) => rejectedAction(state, action, 'user'),
     FULFILLED: (state, action) => {
       const { age, name, surname } = action.payload
       
