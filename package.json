@@ -12,6 +12,12 @@
   "dependencies": {
     "immutability-helper": "^2.8.1"
   },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
   "files": [
     "src/",
     "READ.md",
