@@ -47,6 +47,7 @@ export const fulfilledAction = (state, action, property) => {
       [defaultShape.data]: { $set: payload },
       [defaultShape.fetched]: { $set: true },
       [defaultShape.fetching]: { $set: false },
+      [defaultShape.error]: { $set: null },
     },
   });
 };
